@@ -1,1 +1,267 @@
 @import "tailwindcss";
+
+/* ============================================================
+   HSI Design System — Chili · Ember · Terracotta · Saffron
+   Brand: Him Spices Industries
+   Motto: Quality that counts
+   Palette: #C40C0C · #FF6500 · #CC561E · #F6CE71
+   ============================================================ */
+
+@theme {
+  /* --- Chili Red (#C40C0C) --- */
+  --color-chili-50:  #fff0f0;
+  --color-chili-100: #ffd6d6;
+  --color-chili-200: #ffadad;
+  --color-chili-300: #ff7070;
+  --color-chili-400: #ff3838;
+  --color-chili-500: #c40c0c;
+  --color-chili-600: #a80a0a;
+  --color-chili-700: #8c0808;
+  --color-chili-800: #740707;
+  --color-chili-900: #5e0606;
+  --color-chili-950: #380303;
+
+  /* --- Ember Orange (#FF6500) --- */
+  --color-ember-50:  #fff6ed;
+  --color-ember-100: #ffebd3;
+  --color-ember-200: #ffd3a5;
+  --color-ember-300: #ffb46d;
+  --color-ember-400: #ff8832;
+  --color-ember-500: #ff6500;
+  --color-ember-600: #e05600;
+  --color-ember-700: #ba4300;
+  --color-ember-800: #953500;
+  --color-ember-900: #772a00;
+  --color-ember-950: #3d1500;
+
+  /* --- Terracotta (#CC561E) --- */
+  --color-terra-50:  #fdf3ee;
+  --color-terra-100: #fae3d5;
+  --color-terra-200: #f5c5a8;
+  --color-terra-300: #ee9f72;
+  --color-terra-400: #e5743c;
+  --color-terra-500: #cc561e;
+  --color-terra-600: #b04418;
+  --color-terra-700: #903415;
+  --color-terra-800: #752b14;
+  --color-terra-900: #5e2312;
+  --color-terra-950: #331008;
+
+  /* --- Saffron Gold (#F6CE71) --- */
+  --color-saffron-50:  #fffdf0;
+  --color-saffron-100: #fef9d3;
+  --color-saffron-200: #fdf0a0;
+  --color-saffron-300: #f6ce71;
+  --color-saffron-400: #f2b833;
+  --color-saffron-500: #e09d18;
+  --color-saffron-600: #c07c0f;
+  --color-saffron-700: #9a5e0e;
+  --color-saffron-800: #7d4a10;
+  --color-saffron-900: #663d11;
+  --color-saffron-950: #3a2005;
+
+  /* --- Backgrounds --- */
+  --color-ivory:  #fffaf4;
+  --color-cream:  #fdf8f0;
+  --color-pearl:  #f0f6ff;
+
+  /* --- Legacy aliases --- */
+  --color-brand-50:  #fff0f0;
+  --color-brand-100: #ffd9d9;
+  --color-brand-200: #ffb3b3;
+  --color-brand-300: #ff7a7a;
+  --color-brand-400: #f94444;
+  --color-brand-500: #c40c0c;
+  --color-brand-600: #a80a0a;
+  --color-brand-700: #8c0808;
+  --color-brand-800: #740707;
+  --color-brand-900: #5e0606;
+  --color-brand-950: #380303;
+  --color-steel-600: #4a739a;
+  --color-steel-700: #3d5e7e;
+  --color-steel-800: #355069;
+  --color-steel-900: #2e4358;
+  --color-steel-950: #1e2d3c;
+
+  /* --- Sand / Warm Ivory --- */
+  --color-sand-100: #f8f4e8;
+  --color-sand-200: #e8dbb3;
+  --color-sand-300: #d9c98a;
+  --color-sand-400: #c9b768;
+  --color-sand-500: #b8a24a;
+
+  /* --- Backgrounds --- */
+  --color-ivory:  #fffdeb;
+  --color-cream:  #fdf8f0;
+  --color-pearl:  #f0f6ff;
+
+  /* --- Legacy aliases (kept for other components) --- */
+  --color-burgundy-50:  #fdf2f2;
+  --color-burgundy-100: #fce4e4;
+  --color-burgundy-200: #facece;
+  --color-burgundy-300: #f5a5a5;
+  --color-burgundy-400: #ed6f6f;
+  --color-burgundy-500: #e04040;
+  --color-burgundy-600: #c42828;
+  --color-burgundy-700: #a31e1e;
+  --color-burgundy-800: #7b1d1d;
+  --color-burgundy-900: #611919;
+  --color-burgundy-950: #3b0b0b;
+
+  --color-gold-50:  #fdf8ee;
+  --color-gold-100: #faefd4;
+  --color-gold-200: #f4dca4;
+  --color-gold-300: #edc36a;
+  --color-gold-400: #e8ab44;
+  --color-gold-500: #c9984a;
+  --color-gold-600: #b07c33;
+  --color-gold-700: #8f5f27;
+  --color-gold-800: #764c24;
+  --color-gold-900: #623e22;
+
+  --color-espresso-900: #2c1a0e;
+  --color-espresso-950: #1a0e07;
+
+  /* --- Semantic Aliases --- */
+  --color-primary:       #ce2626;
+  --color-primary-hover: #b31f1f;
+  --color-accent:        #7daacb;
+  --color-accent-hover:  #5e8fb5;
+  --color-surface:       #ffffff;
+  --color-background:    #fffdeb;
+  --color-text:          #1a1a1a;
+  --color-muted:         #6b6b6b;
+  --color-border:        #e8dbb3;
+
+  /* --- Typography --- */
+  --font-serif: "Playfair Display", "Georgia", "Times New Roman", serif;
+  --font-sans:  "Inter", "Helvetica Neue", "Arial", sans-serif;
+}
+
+/* ============================================================
+   Theme Overrides (dev theme-switcher)
+   Applied via data-theme attribute on <html>
+   Default (no attribute) = Fiery Spice
+   ============================================================ */
+
+/* --- Theme: Steel Blue + Sand --- */
+[data-theme="blue"] {
+  --color-chili-200: #ffb3b3;
+  --color-chili-300: #ff7a7a;
+  --color-chili-400: #f94444;
+  --color-chili-500: #ce2626;
+  --color-chili-600: #b31f1f;
+
+  --color-ember-100: #e8f4fb;
+  --color-ember-200: #c3e0f2;
+  --color-ember-300: #9acae8;
+  --color-ember-400: #7daacb;
+  --color-ember-500: #5e8fb5;
+
+  --color-terra-200: #d4e5f0;
+  --color-terra-400: #6b8fa8;
+  --color-terra-500: #4a7291;
+  --color-terra-600: #3d5f7a;
+  --color-terra-800: #2a4559;
+  --color-terra-900: #1e3448;
+  --color-terra-950: #162536;
+
+  --color-saffron-100: #f8f4e8;
+  --color-saffron-200: #e8dbb3;
+  --color-saffron-300: #d4c49a;
+  --color-saffron-400: #c0ad81;
+
+  --color-ivory: #fffdeb;
+}
+
+/* --- Theme: Burgundy Gold --- */
+[data-theme="cream"] {
+  --color-chili-200: #e8b4c0;
+  --color-chili-300: #d4849a;
+  --color-chili-400: #b85470;
+  --color-chili-500: #7c2d3e;
+  --color-chili-600: #6a2535;
+
+  --color-ember-100: #fdf5e0;
+  --color-ember-200: #f5e4b2;
+  --color-ember-300: #ecd080;
+  --color-ember-400: #d4b455;
+  --color-ember-500: #b8973a;
+
+  --color-terra-200: #f0e0c8;
+  --color-terra-400: #9a7a58;
+  --color-terra-500: #7a5a3c;
+  --color-terra-600: #6b4d31;
+  --color-terra-800: #4a3020;
+  --color-terra-900: #2d1f14;
+  --color-terra-950: #1e140d;
+
+  --color-saffron-100: #fdf5e0;
+  --color-saffron-200: #f5e4b2;
+  --color-saffron-300: #e8cc84;
+  --color-saffron-400: #d4b462;
+
+  --color-ivory: #fdf8f0;
+}
+
+/* --- Theme: Herbal Green --- */
+[data-theme="herb"] {
+  --color-chili-100: #e4f2df;
+  --color-chili-200: #c5e2bb;
+  --color-chili-300: #9fcc8e;
+  --color-chili-400: #85b96c;
+  --color-chili-500: #6ca651;
+  --color-chili-600: #5a8d44;
+
+  --color-ember-100: #f2f7d0;
+  --color-ember-200: #e2ed9a;
+  --color-ember-300: #cdd85a;
+  --color-ember-400: #bbcb2e;
+  --color-ember-500: #a3b320;
+
+  --color-terra-200: #c8ce9e;
+  --color-terra-400: #889760;
+  --color-terra-500: #6b7445;
+  --color-terra-600: #5a6238;
+  --color-terra-800: #3d4225;
+  --color-terra-900: #2d3119;
+  --color-terra-950: #1c1f0f;
+
+  --color-saffron-100: #f5f8e8;
+  --color-saffron-200: #e2ed9a;
+  --color-saffron-300: #bbcb2e;
+  --color-saffron-400: #a3b320;
+
+  --color-ivory: #f7fbf2;
+}
+
+/* --- Theme: Pearl Blue --- */
+[data-theme="pearl"] {
+  --color-chili-100: #dbeafe;
+  --color-chili-200: #bfdbfe;
+  --color-chili-300: #93c5fd;
+  --color-chili-400: #60a5fa;
+  --color-chili-500: #2563eb;
+  --color-chili-600: #1d4ed8;
+
+  --color-ember-100: #e0f2fe;
+  --color-ember-200: #bae6fd;
+  --color-ember-300: #7dd3fc;
+  --color-ember-400: #38bdf8;
+  --color-ember-500: #0ea5e9;
+
+  --color-terra-200: #c7d2fe;
+  --color-terra-400: #4f6eb5;
+  --color-terra-500: #3b5ea6;
+  --color-terra-600: #2d4f8e;
+  --color-terra-800: #1e3a7a;
+  --color-terra-900: #172a5c;
+  --color-terra-950: #0f1a3d;
+
+  --color-saffron-100: #eff6ff;
+  --color-saffron-200: #dbeafe;
+  --color-saffron-300: #bfdbfe;
+  --color-saffron-400: #93c5fd;
+
+  --color-ivory: #f0f6ff;
+}

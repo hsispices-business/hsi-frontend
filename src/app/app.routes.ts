@@ -9,7 +9,11 @@ export const routes: Routes = [
       ),
   },
   {
-    path: '**',
-    redirectTo: '',
+    path: 'dev/testing/home',
+    loadComponent: () =>
+      import('./features/home/home.component').then(
+        (m) => m.HomeComponent
+      ),
   },
+  { path: '**', redirectTo: '' },
 ];

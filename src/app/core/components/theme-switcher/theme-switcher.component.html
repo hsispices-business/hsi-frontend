@@ -1,0 +1,78 @@
+<div class="fixed bottom-6 right-6 z-[9999] flex flex-col items-end gap-2">
+
+  <!-- Expanded theme panel -->
+  @if (open()) {
+    <div class="w-56 rounded-2xl bg-white p-3 shadow-2xl ring-1 ring-black/10">
+
+      <p class="mb-2 px-1 text-[10px] font-bold uppercase tracking-widest text-gray-400">
+        Color Theme
+      </p>
+
+      @for (theme of themes; track theme.id) {
+        <button
+          type="button"
+          (click)="applyTheme(theme.id)"
+          class="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm font-medium transition-colors hover:bg-gray-50"
+          [class.bg-gray-100!]="activeThemeId() === theme.id"
+        >
+          <!-- Colour swatches -->
+          <span class="flex shrink-0 gap-0.5">
+            @for (color of theme.swatches.slice(0, 3); track color) {
+              <span
+                class="h-4 w-4 rounded-full ring-1 ring-black/10"
+                [style.background-color]="color"
+              ></span>
+            }
+          </span>
+
+          <span [class.text-gray-900]="activeThemeId() === theme.id"
+                [class.text-gray-600]="activeThemeId() !== theme.id">
+            {{ theme.label }}
+          </span>
+
+          <!-- Active checkmark -->
+          @if (activeThemeId() === theme.id) {
+            <svg class="ml-auto h-4 w-4 shrink-0 text-gray-500" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2.5" d="M5 13l4 4L19 7"/>
+            </svg>
+          }
+        </button>
+      }
+
+    </div>
+  }
+
+  <!-- Toggle pill button -->
+  <button
+    type="button"
+    (click)="toggle()"
+    class="flex items-center gap-2 rounded-full bg-white px-3 py-2 shadow-lg ring-1 ring-black/10 transition-all hover:shadow-xl"
+    aria-label="Toggle dev theme switcher"
+  >
+    <!-- DEV badge -->
+    <span class="rounded-full bg-amber-400 px-1.5 py-0.5 text-[9px] font-black uppercase tracking-wider text-amber-900">
+      DEV
+    </span>
+
+    <!-- Current theme swatches -->
+    <span class="flex gap-0.5">
+      @for (color of currentTheme().swatches.slice(0, 3); track color) {
+        <span
+          class="h-3 w-3 rounded-full ring-1 ring-black/10"
+          [style.background-color]="color"
+        ></span>
+      }
+    </span>
+
+    <!-- Chevron -->
+    <svg class="h-3 w-3 text-gray-400 transition-transform"
+         [class.rotate-180]="open()"
+         fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2.5" d="M5 15l7-7 7 7"/>
+    </svg>
+  </button>
+
+</div>
