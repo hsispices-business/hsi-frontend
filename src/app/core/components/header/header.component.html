@@ -72,15 +72,26 @@
   </div>
 
   <!-- Mobile Menu -->
-  @if (mobileMenuOpen) {
-    <div id="mobile-menu" class="sm:hidden border-t border-border">
-      <div class="space-y-1 px-4 py-3">
-        <a href="#" aria-current="page" class="block rounded-md px-3 py-2 text-sm font-bold text-chili-500 underline decoration-2 underline-offset-2">Products</a>
-        <a href="#" class="block rounded-md px-3 py-2 text-sm font-bold text-chili-500 hover:bg-chili-50">Heritage</a>
-        <a href="#" class="block rounded-md px-3 py-2 text-sm font-bold text-chili-500 hover:bg-chili-50">Blog</a>
-        <a href="#" class="block rounded-md px-3 py-2 text-sm font-bold text-chili-500 hover:bg-chili-50">About Us</a>
-        <a href="#" class="block rounded-md px-3 py-2 text-sm font-bold text-chili-500 hover:bg-chili-50">Contact Us</a>
-      </div>
+  <div
+    id="mobile-menu"
+    class="sm:hidden overflow-hidden transition-all duration-200 ease-out"
+    [class.max-h-0]="!mobileMenuOpen"
+    [class.max-h-96]="mobileMenuOpen"
+    [class.opacity-0]="!mobileMenuOpen"
+    [class.opacity-100]="mobileMenuOpen"
+    [class.border-t]="mobileMenuOpen"
+    [class.border-border]="mobileMenuOpen"
+  >
+    <div class="space-y-1 px-4 py-3">
+      <a
+        routerLink="dev/testing/products"
+        routerLinkActive="underline decoration-2 underline-offset-2"
+        [routerLinkActiveOptions]="{ exact: true }"
+        aria-current="page" class="block rounded-md px-3 py-2 text-sm font-bold text-chili-500">Products</a>
+      <a href="#" class="block rounded-md px-3 py-2 text-sm font-bold text-chili-500">Heritage</a>
+      <a href="#" class="block rounded-md px-3 py-2 text-sm font-bold text-chili-500">Blog</a>
+      <a href="#" class="block rounded-md px-3 py-2 text-sm font-bold text-chili-500">About Us</a>
+      <a href="#" class="block rounded-md px-3 py-2 text-sm font-bold text-chili-500">Contact Us</a>
     </div>
-  }
+  </div>
 </nav>
