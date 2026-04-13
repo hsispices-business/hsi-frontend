@@ -144,35 +144,7 @@
    Default (no attribute) = Fiery Spice
    ============================================================ */
 
-/* --- Theme: Steel Blue + Sand --- */
-[data-theme="blue"] {
-  --color-chili-200: #ffb3b3;
-  --color-chili-300: #ff7a7a;
-  --color-chili-400: #f94444;
-  --color-chili-500: #ce2626;
-  --color-chili-600: #b31f1f;
 
-  --color-ember-100: #e8f4fb;
-  --color-ember-200: #c3e0f2;
-  --color-ember-300: #9acae8;
-  --color-ember-400: #7daacb;
-  --color-ember-500: #5e8fb5;
-
-  --color-terra-200: #d4e5f0;
-  --color-terra-400: #6b8fa8;
-  --color-terra-500: #4a7291;
-  --color-terra-600: #3d5f7a;
-  --color-terra-800: #2a4559;
-  --color-terra-900: #1e3448;
-  --color-terra-950: #162536;
-
-  --color-saffron-100: #f8f4e8;
-  --color-saffron-200: #e8dbb3;
-  --color-saffron-300: #d4c49a;
-  --color-saffron-400: #c0ad81;
-
-  --color-ivory: #fffdeb;
-}
 
 /* --- Theme: Burgundy Gold --- */
 [data-theme="cream"] {
@@ -264,4 +236,291 @@
   --color-saffron-400: #93c5fd;
 
   --color-ivory: #f0f6ff;
+}
+
+/* --- Theme: Vivid --- */
+[data-theme="vivid"] {
+  /* Chili — Deep Red (#C00707) */
+  --color-chili-50:  #fff0f0;
+  --color-chili-100: #ffd4d4;
+  --color-chili-200: #ffa8a8;
+  --color-chili-300: #ff6b6b;
+  --color-chili-400: #f53030;
+  --color-chili-500: #c00707;
+  --color-chili-600: #a30505;
+  --color-chili-700: #870404;
+  --color-chili-800: #6e0303;
+  --color-chili-900: #580303;
+  --color-chili-950: #340101;
+
+  /* Ember — Vivid Orange-Red (#FF4400) */
+  --color-ember-50:  #fff5f0;
+  --color-ember-100: #ffe4d4;
+  --color-ember-200: #ffc3a0;
+  --color-ember-300: #ff9666;
+  --color-ember-400: #ff6633;
+  --color-ember-500: #ff4400;
+  --color-ember-600: #d93a00;
+  --color-ember-700: #b33000;
+  --color-ember-800: #8c2500;
+  --color-ember-900: #6e1d00;
+  --color-ember-950: #3d1000;
+
+  /* Terra — Navy Blue (#134E8E) */
+  --color-terra-50:  #eff6ff;
+  --color-terra-100: #dbeafe;
+  --color-terra-200: #bdd5f5;
+  --color-terra-300: #8db6e8;
+  --color-terra-400: #5690d4;
+  --color-terra-500: #2b6cb8;
+  --color-terra-600: #1e5aa0;
+  --color-terra-700: #174d8e;
+  --color-terra-800: #134175;
+  --color-terra-900: #0f3460;
+  --color-terra-950: #081e3d;
+
+  /* Saffron — Amber Gold (#FFB33F) */
+  --color-saffron-50:  #fffbf0;
+  --color-saffron-100: #fff3d4;
+  --color-saffron-200: #ffe4a0;
+  --color-saffron-300: #ffd068;
+  --color-saffron-400: #ffb33f;
+  --color-saffron-500: #f09520;
+  --color-saffron-600: #d07510;
+  --color-saffron-700: #a85c0c;
+  --color-saffron-800: #87480c;
+  --color-saffron-900: #6e3b0c;
+  --color-saffron-950: #3d1f05;
+
+  --color-ivory: #fff8f0;
+}
+
+/* --- Theme: Saffron Sunrise --- */
+[data-theme="sunrise"] {
+  /* Chili — Burnt Amber */
+  --color-chili-50:  #fffcf0;
+  --color-chili-100: #fef6d4;
+  --color-chili-200: #fde9a8;
+  --color-chili-300: #f9d168;
+  --color-chili-400: #e8a82a;
+  --color-chili-500: #b45309;
+  --color-chili-600: #985506;
+  --color-chili-700: #7a4305;
+  --color-chili-800: #5e3404;
+  --color-chili-900: #4a2803;
+  --color-chili-950: #251402;
+
+  /* Ember — Warm Gold */
+  --color-ember-50:  #fffef5;
+  --color-ember-100: #fef9d4;
+  --color-ember-200: #fdf0a0;
+  --color-ember-300: #fbe268;
+  --color-ember-400: #f7cb30;
+  --color-ember-500: #d97706;
+  --color-ember-600: #b36005;
+  --color-ember-700: #8f4c04;
+  --color-ember-800: #713c03;
+  --color-ember-900: #593003;
+  --color-ember-950: #301901;
+
+  /* Terra — Dark Espresso */
+  --color-terra-200: #f2d5b0;
+  --color-terra-400: #c07840;
+  --color-terra-500: #8b4e1a;
+  --color-terra-600: #703c12;
+  --color-terra-800: #3d2208;
+  --color-terra-900: #2a1605;
+  --color-terra-950: #170b02;
+
+  /* Saffron — Pale Yellow */
+  --color-saffron-100: #fefce8;
+  --color-saffron-200: #fdf6c0;
+  --color-saffron-300: #fbec8a;
+  --color-saffron-400: #f7d848;
+
+  --color-ivory: #fffbf0;
+}
+
+/* --- Theme: Rose Petal --- */
+[data-theme="rose"] {
+  /* Chili — Deep Rose */
+  --color-chili-50:  #fff5f7;
+  --color-chili-100: #ffe0ea;
+  --color-chili-200: #ffc0d5;
+  --color-chili-300: #ff90b8;
+  --color-chili-400: #f65492;
+  --color-chili-500: #be185d;
+  --color-chili-600: #a0154f;
+  --color-chili-700: #851241;
+  --color-chili-800: #6c0f34;
+  --color-chili-900: #560c29;
+  --color-chili-950: #300616;
+
+  /* Ember — Coral Pink */
+  --color-ember-50:  #fdf4f8;
+  --color-ember-100: #fce7f3;
+  --color-ember-200: #fbcfe8;
+  --color-ember-300: #f9a8d4;
+  --color-ember-400: #f472b6;
+  --color-ember-500: #ec4899;
+  --color-ember-600: #db2777;
+  --color-ember-700: #be185d;
+  --color-ember-800: #9d174d;
+  --color-ember-900: #831843;
+  --color-ember-950: #4c0d27;
+
+  /* Terra — Deep Wine */
+  --color-terra-200: #edb4c8;
+  --color-terra-400: #a04868;
+  --color-terra-500: #7c2d42;
+  --color-terra-600: #682437;
+  --color-terra-800: #3e1220;
+  --color-terra-900: #280b15;
+  --color-terra-950: #18060d;
+
+  /* Saffron — Blush */
+  --color-saffron-100: #fff5f7;
+  --color-saffron-200: #ffe0ea;
+  --color-saffron-300: #ffc0d5;
+  --color-saffron-400: #ff90b8;
+
+  --color-ivory: #fff8fb;
+}
+
+/* --- Theme: Peacock Teal --- */
+[data-theme="peacock"] {
+  /* Chili — Dark Teal */
+  --color-chili-50:  #f0fdfa;
+  --color-chili-100: #ccfbf1;
+  --color-chili-200: #99f6e4;
+  --color-chili-300: #5eead4;
+  --color-chili-400: #2dd4bf;
+  --color-chili-500: #0f766e;
+  --color-chili-600: #0d6b62;
+  --color-chili-700: #0b5a52;
+  --color-chili-800: #094a43;
+  --color-chili-900: #073c36;
+  --color-chili-950: #042320;
+
+  /* Ember — Bright Teal */
+  --color-ember-50:  #f0fdfb;
+  --color-ember-100: #ccfff7;
+  --color-ember-200: #9af9f0;
+  --color-ember-300: #5ef0e8;
+  --color-ember-400: #2ed8d0;
+  --color-ember-500: #14b8a6;
+  --color-ember-600: #0d9488;
+  --color-ember-700: #0f766e;
+  --color-ember-800: #115e59;
+  --color-ember-900: #134e4a;
+  --color-ember-950: #042f2e;
+
+  /* Terra — Deep Jade */
+  --color-terra-200: #99e6e0;
+  --color-terra-400: #1a8078;
+  --color-terra-500: #0f5e58;
+  --color-terra-600: #0a4d47;
+  --color-terra-800: #063430;
+  --color-terra-900: #042220;
+  --color-terra-950: #021412;
+
+  /* Saffron — Warm Gold accent */
+  --color-saffron-100: #fef9e7;
+  --color-saffron-200: #fdf3c0;
+  --color-saffron-300: #fbe888;
+  --color-saffron-400: #f7d34c;
+
+  --color-ivory: #f0fdfa;
+}
+
+/* --- Theme: Royal Indigo --- */
+[data-theme="royal"] {
+  /* Chili — Deep Indigo */
+  --color-chili-50:  #f5f3ff;
+  --color-chili-100: #ede9fe;
+  --color-chili-200: #ddd6fe;
+  --color-chili-300: #c4b5fd;
+  --color-chili-400: #a78bfa;
+  --color-chili-500: #4338ca;
+  --color-chili-600: #3730a3;
+  --color-chili-700: #312e81;
+  --color-chili-800: #2a266d;
+  --color-chili-900: #231e5a;
+  --color-chili-950: #151032;
+
+  /* Ember — Lavender Violet */
+  --color-ember-50:  #f5f3ff;
+  --color-ember-100: #ede9fe;
+  --color-ember-200: #ddd6fe;
+  --color-ember-300: #c4b5fd;
+  --color-ember-400: #a78bfa;
+  --color-ember-500: #818cf8;
+  --color-ember-600: #6d7bef;
+  --color-ember-700: #5a6bdd;
+  --color-ember-800: #495ac8;
+  --color-ember-900: #3948b0;
+  --color-ember-950: #1e1b4b;
+
+  /* Terra — Midnight Indigo */
+  --color-terra-200: #c8c4f5;
+  --color-terra-400: #6058c8;
+  --color-terra-500: #3a3498;
+  --color-terra-600: #2e297a;
+  --color-terra-800: #1a185c;
+  --color-terra-900: #100e3a;
+  --color-terra-950: #08071e;
+
+  /* Saffron — Warm Gold accent */
+  --color-saffron-100: #fef9e7;
+  --color-saffron-200: #fdf0b8;
+  --color-saffron-300: #fce278;
+  --color-saffron-400: #f7cc38;
+
+  --color-ivory: #f5f3ff;
+}
+
+/* --- Theme: Cinnamon Bark --- */
+[data-theme="cinnamon"] {
+  /* Chili — Cinnamon Brown */
+  --color-chili-50:  #fdf7f4;
+  --color-chili-100: #fbece0;
+  --color-chili-200: #f6d0ba;
+  --color-chili-300: #efae8a;
+  --color-chili-400: #e28458;
+  --color-chili-500: #7c4a1e;
+  --color-chili-600: #6a3e19;
+  --color-chili-700: #563114;
+  --color-chili-800: #422610;
+  --color-chili-900: #321c0c;
+  --color-chili-950: #190d06;
+
+  /* Ember — Sienna */
+  --color-ember-50:  #fdf5ef;
+  --color-ember-100: #fbe8d8;
+  --color-ember-200: #f6cdb0;
+  --color-ember-300: #edab80;
+  --color-ember-400: #e08050;
+  --color-ember-500: #a0522d;
+  --color-ember-600: #884425;
+  --color-ember-700: #6e371e;
+  --color-ember-800: #572c18;
+  --color-ember-900: #432314;
+  --color-ember-950: #221009;
+
+  /* Terra — Dark Bark */
+  --color-terra-200: #e8c8a8;
+  --color-terra-400: #a07040;
+  --color-terra-500: #6a4520;
+  --color-terra-600: #543618;
+  --color-terra-800: #2e1c0a;
+  --color-terra-900: #1e1206;
+  --color-terra-950: #0f0903;
+
+  /* Saffron — Warm Tan */
+  --color-saffron-100: #fdf6ee;
+  --color-saffron-200: #fae9d0;
+  --color-saffron-300: #f5d4a0;
+  --color-saffron-400: #eeba68;
+
+  --color-ivory: #fdf6ee;
 }

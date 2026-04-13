@@ -5,13 +5,13 @@
 // Base Reset & Typography
 // ============================================================
 html, body {
-  background-color: #fdf8f0; // --hsi-cream
-  color: #1a1a1a;
+  background-color: var(--color-background);
+  color: var(--color-text);
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  color: #2c1a0e; // --hsi-espresso
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--color-text);
 }

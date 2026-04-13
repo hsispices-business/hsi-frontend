@@ -15,5 +15,12 @@ export const routes: Routes = [
         (m) => m.HomeComponent
       ),
   },
+  {
+    path: 'dev/testing/products',
+    loadComponent: () =>
+      import('./features/products/products.component').then(
+        (m) => m.ProductsComponent
+      ),
+  },
   { path: '**', redirectTo: '' },
 ];

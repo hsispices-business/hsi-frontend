@@ -1,0 +1,86 @@
+<nav class="bg-surface border-b border-border">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="relative flex h-16 items-center justify-between">
+
+      <!-- Mobile menu button -->
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        <button
+          type="button"
+          (click)="mobileMenuOpen = !mobileMenuOpen"
+          [attr.aria-expanded]="mobileMenuOpen"
+          aria-controls="mobile-menu"
+          class="relative inline-flex items-center justify-center rounded-md p-2 text-chili-500 hover:bg-chili-50 focus:outline-2 focus:-outline-offset-1 focus:outline-chili-400 transition-colors"
+        >
+          <span class="absolute -inset-0.5"></span>
+          <span class="sr-only">Open main menu</span>
+          <!-- Hamburger icon -->
+          <svg
+            [class.hidden]="mobileMenuOpen"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+            class="size-6"
+          >
+            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <!-- Close icon -->
+          <svg
+            [class.hidden]="!mobileMenuOpen"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+            class="size-6"
+          >
+            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Logo + Desktop Nav + CTA -->
+      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
+
+        <!-- Logo -->
+        <div class="flex shrink-0 items-center">
+          <img class="h-8 w-auto cursor-pointer" routerLink="/dev/testing/home" src="brand_logo.png" alt="Him Spices Industries" />
+        </div>
+
+        <!-- Desktop Nav Links -->
+        <div class="hidden sm:flex sm:items-center sm:ml-6 sm:space-x-1">
+          <a routerLink="dev/testing/products"
+          routerLinkActive="underline decoration-2 underline-offset-2 sm:underline-offset-8"
+          [routerLinkActiveOptions]="{ exact: true }"
+          aria-current="page" class="rounded-md px-3 py-2 text-sm font-bold text-chili-500 hover:underline hover:decoration-2 hover:underline-offset-2 sm:hover:underline-offset-8">Products</a>
+          <a href="#" class="rounded-md px-3 py-2 text-sm font-bold text-chili-500 hover:underline hover:decoration-2 hover:underline-offset-2 sm:hover:underline-offset-8">Heritage</a>
+          <a href="#" class="rounded-md px-3 py-2 text-sm font-bold text-chili-500 hover:underline hover:decoration-2 hover:underline-offset-2 sm:hover:underline-offset-8">Blog</a>
+          <a href="#" class="rounded-md px-3 py-2 text-sm font-bold text-chili-500 hover:underline hover:decoration-2 hover:underline-offset-2 sm:hover:underline-offset-8">About Us</a>
+          <a href="#" class="rounded-md px-3 py-2 text-sm font-bold text-chili-500 hover:underline hover:decoration-2 hover:underline-offset-2 sm:hover:underline-offset-8">Contact Us</a>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="absolute inset-y-0 right-0 flex items-center sm:static sm:inset-auto">
+          <button class="rounded-md bg-chili-500 px-4 py-2 text-sm font-bold text-white hover:bg-chili-600 transition-colors">
+            Get Quote
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  @if (mobileMenuOpen) {
+    <div id="mobile-menu" class="sm:hidden border-t border-border">
+      <div class="space-y-1 px-4 py-3">
+        <a href="#" aria-current="page" class="block rounded-md px-3 py-2 text-sm font-bold text-chili-500 underline decoration-2 underline-offset-2">Products</a>
+        <a href="#" class="block rounded-md px-3 py-2 text-sm font-bold text-chili-500 hover:bg-chili-50">Heritage</a>
+        <a href="#" class="block rounded-md px-3 py-2 text-sm font-bold text-chili-500 hover:bg-chili-50">Blog</a>
+        <a href="#" class="block rounded-md px-3 py-2 text-sm font-bold text-chili-500 hover:bg-chili-50">About Us</a>
+        <a href="#" class="block rounded-md px-3 py-2 text-sm font-bold text-chili-500 hover:bg-chili-50">Contact Us</a>
+      </div>
+    </div>
+  }
+</nav>
