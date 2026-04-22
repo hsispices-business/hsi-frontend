@@ -1,4 +1,4 @@
-<section class="relative flex min-h-[calc(100dvh-4rem)] items-center overflow-hidden pt-10 pb-12 lg:pt-0">
+<section class="relative flex min-h-[calc(100dvh-4rem)] items-center justify-center overflow-hidden pt-10 pb-12 lg:pt-0">
   <div class="absolute inset-0 z-0">
     <img
       alt=""
@@ -7,24 +7,25 @@
       src="hero_base.png"
     />
   </div>
-  <div class="relative z-10 container mx-auto grid w-7xl items-center gap-12 px-6 lg:grid-cols-2">
-    <div class="space-y-8">
+  <div class="relative z-10 text-center container mx-auto grid w-7xl items-center gap-12 px-6 lg:grid-cols-2">
+    <div class="space-y-8 animate-hero-text-up lg:animate-hero-text-in">
       <span
         class="border-chili-500/20 text-chili-500 inline-block border px-4 py-1 text-sm font-medium tracking-widest uppercase"
       >
         Him Spices Industries &middot; Est. 1999
       </span>
-      <div class="border-chili-500 border-l-4 pl-5">
+      <p class="text-secondary text-center text-xs font-medium tracking-widest mb-2 lg:mb-5 uppercase">Our Philosophy</p>
+      <div class="relative pl-8 py-2">
         <h1
-          class="font-headline custom-eagle-font text-chili-500 text-5xl leading-25 font-black tracking-[0.25rem] italic lg:text-7xl"
+          class="font-headline relative text-center custom-eagle-font text-chili-500 text-5xl lg:text-7xl font-black italic tracking-[0.25rem] leading-tight max-w-2xl"
         >
-          Quality that counts
+          <span class="absolute left-7 md:-left-3 lg:-left-10 opacity-40">&ldquo;</span>Quality that counts<span class="relative -right-1 opacity-40">&rdquo;</span>
         </h1>
       </div>
       <p class="text-muted max-w-lg text-lg leading-relaxed">
-        Crafting authentic spice blends with traditional methods. Purity is our only promise.
+        Crafting authentic spice blends with traditional methods. Purity is our promise.
       </p>
-      <div class="flex items-center gap-6">
+      <div class="flex items-center justify-center gap-6">
         <button
           class="bg-chili-500 hover:bg-chili-600 px-8 py-4 text-lg font-medium text-white shadow-xl transition-all duration-300 active:scale-95"
         >
@@ -38,19 +39,19 @@
         </a>
       </div>
     </div>
-    <div class="group relative">
+    <div class="group relative animate-hero-image-down md:animate-hero-image-down-75 lg:animate-hero-image-in">
       <!-- Gradient glow layer -->
       <div
         class="from-saffron-200/40 to-terra-300/25 absolute -inset-3 scale-95 bg-linear-to-br blur-md transition-transform duration-700 group-hover:scale-105"
       ></div>
       <!-- Offset border frame -->
       <div
-        class="border-saffron-300/60 absolute -right-3 -bottom-3 h-full w-full border-2 transition-all duration-500 group-hover:-right-5 group-hover:-bottom-5"
+        class="border-saffron-300/60 absolute rounded-3xl -right-3 -bottom-3 h-full w-full border-2 transition-all duration-500 group-hover:-right-5 group-hover:-bottom-5"
       ></div>
       <!-- Hero image -->
       <img
         alt=""
-        class="relative aspect-4/5 w-full object-cover [box-shadow:0_25px_60px_-10px_rgba(180,80,20,0.4),0_8px_20px_-5px_rgba(0,0,0,0.25)] transition-transform duration-500 group-hover:scale-[1.02]"
+        class="relative aspect-4/5 w-full object-cover rounded-3xl [box-shadow:0_25px_60px_-10px_rgba(180,80,20,0.4),0_8px_20px_-5px_rgba(0,0,0,0.25)] transition-transform duration-500 group-hover:scale-[1.02]"
         data-alt="Premium spice packaging"
         src="hero_image.png"
       />
@@ -206,8 +207,8 @@
 
     @if (policyExpanded) {
       <div class="mb-8 space-y-6 border-t border-white/20 pt-8">
-        <p class="font-serif text-xl leading-tight italic tracking-wider md:text-2xl">"Doing it right from the first time" and "Self-Control" are the prerequisites of building Quality into the Product, step by step, stage by stage. The Quality Inspector, then, is given no opportunity to reject the Finished Products.</p>
-        <p class="font-serif text-xl leading-tight italic tracking-wider md:text-2xl">"OBSESSION for Quality" is just like striving for "MOKSHA". A single-minded devotion to produce Quality alone can realize the corporate objectives of profits, growth and excellence.</p>
+        <p class="font-serif text-xl leading-tight italic tracking-wider md:text-2xl"><span class="material-symbols-outlined text-sm align-middle">format_quote</span>Doing it right from the first time<span class="material-symbols-outlined text-sm align-middle" style="transform: scaleX(-1)">format_quote</span> and <span class="material-symbols-outlined text-sm align-middle">format_quote</span>Self-Control<span class="material-symbols-outlined text-sm align-middle" style="transform: scaleX(-1)">format_quote</span> are the prerequisites of building Quality into the Product, step by step, stage by stage. The Quality Inspector, then, is given no opportunity to reject the Finished Products.</p>
+        <p class="font-serif text-xl leading-tight italic tracking-wider md:text-2xl"><span class="material-symbols-outlined text-sm align-middle">format_quote</span>OBSESSION for Quality<span class="material-symbols-outlined text-sm align-middle" style="transform: scaleX(-1)">format_quote</span> is just like striving for <span class="material-symbols-outlined text-sm align-middle">format_quote</span>MOKSHA<span class="material-symbols-outlined text-sm align-middle" style="transform: scaleX(-1)">format_quote</span>. A single-minded devotion to produce Quality alone can realize the corporate objectives of profits, growth and excellence.</p>
       </div>
     }
 

@@ -29,6 +29,11 @@ export class ThemeSwitcherComponent {
     () => this.themes.find(t => t.id === this.activeThemeId())!,
   );
 
+  constructor() {
+    // Apply default theme on load
+    this.applyTheme('herb');
+  }
+
   toggle(): void {
     this.open.update(v => !v);
   }
