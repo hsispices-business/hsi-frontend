@@ -1,0 +1,16 @@
+.custom-eagle-font {
+  font-family: 'Eagle Lake', serif !important;
+}
+
+.shine-text {
+  background:
+    radial-gradient(circle at center, var(--color-saffron-400), transparent 65%) 200% 50% / 200%
+      100% no-repeat,
+    var(--color-chili-500);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    0 1px 2px color-mix(in srgb, var(--color-chili-500) 40%, transparent),
+    0 0 1px color-mix(in srgb, var(--color-chili-500) 55%, transparent);
+}

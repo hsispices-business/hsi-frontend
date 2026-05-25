@@ -38,8 +38,8 @@
 }
 
 @keyframes text-shine {
-  0% { background-position: 100% 0%; }
-  100% { background-position: -100% 0%; }
+  0%   { background-position: 200% 50%; }
+  100% { background-position: -200% 50%; }
 }
 
 @theme {
@@ -49,7 +49,7 @@
   --animate-hero-image-down: hero-image-down 1s cubic-bezier(0.16, 1, 0.3, 1) 1s both;
   --animate-hero-image-down-75: hero-image-down-75 0.4s cubic-bezier(0.16, 1, 0.3, 1) 1s both;
   --animate-hero-text-up: hero-text-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1s both;
-  --animate-text-shine: text-shine 6s linear 1s infinite;
+  --animate-text-shine: text-shine 5s linear 2s infinite;
 
   /* --- Chili Red (#C40C0C) --- */
   --color-chili-50:  #fff0f0;
@@ -177,6 +177,7 @@
   --color-border:        #e8dbb3;
 
   /* --- Typography --- */
+  --font-headline: "Eagle Lake", "Georgia", serif;
   --font-serif: "Playfair Display", "Georgia", "Times New Roman", serif;
   --font-sans:  "Inter", "Helvetica Neue", "Arial", sans-serif;
 }
