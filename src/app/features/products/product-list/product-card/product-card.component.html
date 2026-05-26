@@ -1,0 +1,76 @@
+<article
+  class="group bg-terra-950 text-ivory relative mx-auto flex h-full w-full max-w-95 flex-col overflow-hidden shadow-2xl transition-transform duration-300 hover:-translate-y-1"
+>
+  <!-- header -->
+  <header
+    class="border-ivory/20 flex items-center justify-between border-b px-5 py-3.5 text-[10px] tracking-[0.22em] uppercase"
+  >
+    <span class="opacity-80">HSI</span>
+    <span class="text-saffron-300">FSSAI Certified</span>
+  </header>
+
+  <!-- image with corner brackets -->
+  <div class="bg-ivory relative flex h-80 items-center justify-center">
+    <img
+      [src]="'haldi_image.png'"
+      [alt]="product().name"
+      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+    />
+    <span class="border-terra-900 absolute top-3.5 left-3.5 h-3.5 w-3.5 border-t border-l"></span>
+    <span class="border-terra-900 absolute top-3.5 right-3.5 h-3.5 w-3.5 border-t border-r"></span>
+    <span class="border-terra-900 absolute bottom-3.5 left-3.5 h-3.5 w-3.5 border-b border-l"></span>
+    <span class="border-terra-900 absolute right-3.5 bottom-3.5 h-3.5 w-3.5 border-r border-b"></span>
+  </div>
+
+  <!-- body -->
+  <div class="flex flex-1 flex-col p-6">
+    <span class="text-[10px] tracking-[0.22em] uppercase opacity-80">
+      {{ product().generic_name ?? '—' }}
+    </span>
+
+    <h3 class="text-saffron-300 mt-2 flex flex-1 items-start text-[40px] leading-none tracking-tight">
+      {{ product().name }}
+    </h3>
+
+    <dl class="mt-5 flex flex-col text-[12px]">
+      <div class="border-ivory/20 flex items-center justify-between border-t border-b py-3">
+        <dt class="text-[9.5px] tracking-[0.16em] uppercase opacity-50">⸱</dt>
+        <dd class="text-right">{{ product().short_description ?? '—' }}</dd>
+      </div>
+      <div class="border-ivory/20 flex items-center justify-between border-b py-3">
+        <dt class="text-[9.5px] tracking-[0.16em] uppercase opacity-50">Category</dt>
+        <dd class="text-right">{{ product().category.name }}</dd>
+      </div>
+      <!-- <div class="border-ivory/20 flex items-center justify-between border-b py-3">
+        <dt class="text-[9.5px] uppercase tracking-[0.16em] opacity-50">Lot</dt>
+        <dd class="text-right">{{ product().slug }}</dd>
+      </div> -->
+    </dl>
+
+    <button
+      type="button"
+      [attr.aria-label]="'View ' + product().name"
+      class="border-saffron-300/40 text-saffron-300 hover:bg-saffron-300 hover:text-terra-950 group/btn mt-auto flex items-center justify-between gap-2 border px-4 py-3 text-[10px] tracking-[0.22em] uppercase transition-colors duration-200"
+    >
+      <span>View Product</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1"
+      >
+        <line
+          x1="5"
+          y1="12"
+          x2="19"
+          y2="12"
+        />
+        <polyline points="12 5 19 12 12 19" />
+      </svg>
+    </button>
+  </div>
+</article>

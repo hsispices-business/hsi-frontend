@@ -1,7 +1,6 @@
-<nav class="sticky top-0 z-50 bg-surface border-b border-border">
+<nav class="bg-surface border-border sticky top-0 z-50 border-b shadow-xl">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
-
       <!-- Mobile menu button -->
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
         <button
@@ -9,7 +8,7 @@
           (click)="mobileMenuOpen = !mobileMenuOpen"
           [attr.aria-expanded]="mobileMenuOpen"
           aria-controls="mobile-menu"
-          class="relative inline-flex items-center justify-center rounded-md p-2 text-chili-500 hover:bg-chili-50 focus:outline-2 focus:-outline-offset-1 focus:outline-chili-400 transition-colors"
+          class="text-chili-500 hover:bg-chili-50 focus:outline-chili-400 relative inline-flex items-center justify-center rounded-md p-2 transition-colors focus:outline-2 focus:-outline-offset-1"
         >
           <span class="absolute -inset-0.5"></span>
           <span class="sr-only">Open main menu</span>
@@ -23,7 +22,11 @@
             aria-hidden="true"
             class="size-6"
           >
-            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
           </svg>
           <!-- Close icon -->
           <svg
@@ -35,38 +38,81 @@
             aria-hidden="true"
             class="size-6"
           >
-            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M6 18 18 6M6 6l12 12"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
           </svg>
         </button>
       </div>
 
       <!-- Logo + Desktop Nav + CTA -->
       <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
-
         <!-- Logo -->
         <div class="flex shrink-0 items-center">
-          <img class="h-8 w-auto cursor-pointer" routerLink="/dev/testing/home" src="brand_logo.png" alt="Him Spices Industries" />
+          <img
+            class="h-8 w-auto cursor-pointer"
+            routerLink="/dev/testing/home"
+            src="brand_logo.png"
+            alt="Him Spices Industries"
+          />
         </div>
 
         <!-- Desktop Nav Links -->
-        <div class="hidden sm:flex sm:items-center sm:ml-6 sm:space-x-1">
-          <a routerLink="dev/testing/products"
-          routerLinkActive="underline decoration-2 underline-offset-2 sm:underline-offset-8"
-          [routerLinkActiveOptions]="{ exact: true }"
-          aria-current="page" class="rounded-md px-3 py-2 text-sm font-bold text-chili-500 hover:underline hover:decoration-2 hover:underline-offset-2 sm:hover:underline-offset-8">Products</a>
-          <a href="#" class="rounded-md px-3 py-2 text-sm font-bold text-chili-500 hover:underline hover:decoration-2 hover:underline-offset-2 sm:hover:underline-offset-8">Heritage</a>
-          <a href="#" class="rounded-md px-3 py-2 text-sm font-bold text-chili-500 hover:underline hover:decoration-2 hover:underline-offset-2 sm:hover:underline-offset-8">Blog</a>
-          <a href="#" class="rounded-md px-3 py-2 text-sm font-bold text-chili-500 hover:underline hover:decoration-2 hover:underline-offset-2 sm:hover:underline-offset-8">About Us</a>
-          <a href="#" class="rounded-md px-3 py-2 text-sm font-bold text-chili-500 hover:underline hover:decoration-2 hover:underline-offset-2 sm:hover:underline-offset-8">Contact Us</a>
+        <div class="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-1">
+          <a
+            routerLink="dev/testing/home"
+            routerLinkActive="underline decoration-2 underline-offset-2 sm:underline-offset-8"
+            [routerLinkActiveOptions]="{ exact: true }"
+            aria-current="page"
+            class="text-chili-500 rounded-md px-3 py-2 text-sm font-bold hover:underline hover:decoration-2 hover:underline-offset-2 sm:hover:underline-offset-8"
+          >
+            Home
+          </a>
+          <a
+            routerLink="dev/testing/products"
+            routerLinkActive="underline decoration-2 underline-offset-2 sm:underline-offset-8"
+            [routerLinkActiveOptions]="{ exact: true }"
+            aria-current="page"
+            class="text-chili-500 rounded-md px-3 py-2 text-sm font-bold hover:underline hover:decoration-2 hover:underline-offset-2 sm:hover:underline-offset-8"
+          >
+            Products
+          </a>
+          <a
+            href="#"
+            class="text-chili-500 rounded-md px-3 py-2 text-sm font-bold hover:underline hover:decoration-2 hover:underline-offset-2 sm:hover:underline-offset-8"
+          >
+            Heritage
+          </a>
+          <a
+            href="#"
+            class="text-chili-500 rounded-md px-3 py-2 text-sm font-bold hover:underline hover:decoration-2 hover:underline-offset-2 sm:hover:underline-offset-8"
+          >
+            Blog
+          </a>
+          <a
+            href="#"
+            class="text-chili-500 rounded-md px-3 py-2 text-sm font-bold hover:underline hover:decoration-2 hover:underline-offset-2 sm:hover:underline-offset-8"
+          >
+            About Us
+          </a>
+          <a
+            href="#"
+            class="text-chili-500 rounded-md px-3 py-2 text-sm font-bold hover:underline hover:decoration-2 hover:underline-offset-2 sm:hover:underline-offset-8"
+          >
+            Contact Us
+          </a>
         </div>
 
         <!-- CTA Button -->
         <div class="absolute inset-y-0 right-0 flex items-center sm:static sm:inset-auto">
-          <button class="rounded-md bg-chili-500 px-4 py-2 text-sm font-bold text-white hover:bg-chili-600 transition-colors">
+          <button
+            class="bg-chili-500 hover:bg-chili-600 rounded-md px-4 py-2 text-sm font-bold text-white transition-colors"
+          >
             Get Quote
           </button>
         </div>
-
       </div>
     </div>
   </div>
@@ -74,7 +120,7 @@
   <!-- Mobile Menu -->
   <div
     id="mobile-menu"
-    class="sm:hidden overflow-hidden transition-all duration-200 ease-out"
+    class="overflow-hidden transition-all duration-200 ease-out sm:hidden"
     [class.max-h-0]="!mobileMenuOpen"
     [class.max-h-96]="mobileMenuOpen"
     [class.opacity-0]="!mobileMenuOpen"
@@ -87,11 +133,35 @@
         routerLink="dev/testing/products"
         routerLinkActive="underline decoration-2 underline-offset-2"
         [routerLinkActiveOptions]="{ exact: true }"
-        aria-current="page" class="block rounded-md px-3 py-2 text-sm font-bold text-chili-500">Products</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-sm font-bold text-chili-500">Heritage</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-sm font-bold text-chili-500">Blog</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-sm font-bold text-chili-500">About Us</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-sm font-bold text-chili-500">Contact Us</a>
+        aria-current="page"
+        class="text-chili-500 block rounded-md px-3 py-2 text-sm font-bold"
+      >
+        Products
+      </a>
+      <a
+        href="#"
+        class="text-chili-500 block rounded-md px-3 py-2 text-sm font-bold"
+      >
+        Heritage
+      </a>
+      <a
+        href="#"
+        class="text-chili-500 block rounded-md px-3 py-2 text-sm font-bold"
+      >
+        Blog
+      </a>
+      <a
+        href="#"
+        class="text-chili-500 block rounded-md px-3 py-2 text-sm font-bold"
+      >
+        About Us
+      </a>
+      <a
+        href="#"
+        class="text-chili-500 block rounded-md px-3 py-2 text-sm font-bold"
+      >
+        Contact Us
+      </a>
     </div>
   </div>
 </nav>

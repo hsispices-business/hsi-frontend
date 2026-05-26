@@ -1,14 +1,14 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { apiConfig } from '../config/api.config';
+import { APP_CONFIG } from '../config/app-config.token';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HttpService {
   private readonly http = inject(HttpClient);
-  private readonly baseUrl = apiConfig.baseUrl;
+  private readonly baseUrl = inject(APP_CONFIG).apiBaseUrl;
 
   get<T>(path: string, params?: Record<string, string>): Observable<T> {
     const httpParams = params ? new HttpParams({ fromObject: params }) : undefined;
