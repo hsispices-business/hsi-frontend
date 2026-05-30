@@ -1,5 +1,7 @@
 <div class="relative grid min-h-screen grid-rows-[auto_1fr] gap-1">
-  <section class="border-chili-200 relative flex items-center justify-between border-b px-12 py-16">
+  <section
+    class="border-chili-500 relative flex flex-col items-center justify-between border-b p-8 shadow-xl md:flex-row"
+  >
     <!-- Left Content -->
     <div class="flex flex-1 flex-col gap-4">
       <p class="text-sm font-semibold tracking-wider text-amber-900 uppercase">The Spice Range</p>
@@ -43,7 +45,7 @@
       </div>
     </div>
   </section>
-  <section class="relative grid grid-cols-[20%_1fr]">
+  <section class="relative grid grid-cols-1 md:grid-cols-[30%_1fr] md:p-4 lg:grid-cols-[20%_1fr]">
     <app-filter-selection />
     <app-product-list [productList]="duplicateProducts()" />
   </section>

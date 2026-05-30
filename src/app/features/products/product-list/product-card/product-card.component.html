@@ -1,58 +1,39 @@
 <article
-  class="group bg-terra-950 text-ivory relative mx-auto flex h-full w-full max-w-95 flex-col overflow-hidden shadow-2xl transition-transform duration-300 hover:-translate-y-1"
+  class="group font-geist-mono bg-chili-100 relative aspect-4/6 w-full justify-end overflow-hidden px-3 pt-6 pb-12 text-[#f7fbf2] shadow-xl transition-transform duration-300 hover:-translate-y-1"
 >
-  <!-- header -->
-  <header
-    class="border-ivory/20 flex items-center justify-between border-b px-5 py-3.5 text-[10px] tracking-[0.22em] uppercase"
-  >
-    <span class="opacity-80">HSI</span>
-    <span class="text-saffron-300">FSSAI Certified</span>
-  </header>
-
-  <!-- image with corner brackets -->
-  <div class="bg-ivory relative flex h-80 items-center justify-center">
+  <!-- full-bleed product photo -->
+  <div class="absolute inset-5">
     <img
       [src]="'haldi_image.png'"
       [alt]="product().name"
-      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+      class="h-full w-full object-cover"
     />
-    <span class="border-terra-900 absolute top-3.5 left-3.5 h-3.5 w-3.5 border-t border-l"></span>
-    <span class="border-terra-900 absolute top-3.5 right-3.5 h-3.5 w-3.5 border-t border-r"></span>
-    <span class="border-terra-900 absolute bottom-3.5 left-3.5 h-3.5 w-3.5 border-b border-l"></span>
-    <span class="border-terra-900 absolute right-3.5 bottom-3.5 h-3.5 w-3.5 border-r border-b"></span>
   </div>
 
-  <!-- body -->
-  <div class="flex flex-1 flex-col p-6">
-    <span class="text-[10px] tracking-[0.22em] uppercase opacity-80">
-      {{ product().generic_name ?? '—' }}
-    </span>
+  <!-- gradient scrim -->
+  <div
+    class="pointer-events-none absolute inset-0"
+    style="
+      background: linear-gradient(
+        to top,
+        rgba(28, 31, 15, 0.88) 0%,
+        rgba(28, 31, 15, 0.7) 18%,
+        rgba(28, 31, 15, 0.35) 42%,
+        rgba(28, 31, 15, 0.05) 68%,
+        rgba(28, 31, 15, 0) 82%
+      );
+    "
+  ></div>
 
-    <h3 class="text-saffron-300 mt-2 flex flex-1 items-start text-[40px] leading-none tracking-tight">
-      {{ product().name }}
-    </h3>
-
-    <dl class="mt-5 flex flex-col text-[12px]">
-      <div class="border-ivory/20 flex items-center justify-between border-t border-b py-3">
-        <dt class="text-[9.5px] tracking-[0.16em] uppercase opacity-50">⸱</dt>
-        <dd class="text-right">{{ product().short_description ?? '—' }}</dd>
-      </div>
-      <div class="border-ivory/20 flex items-center justify-between border-b py-3">
-        <dt class="text-[9.5px] tracking-[0.16em] uppercase opacity-50">Category</dt>
-        <dd class="text-right">{{ product().category.name }}</dd>
-      </div>
-      <!-- <div class="border-ivory/20 flex items-center justify-between border-b py-3">
-        <dt class="text-[9.5px] uppercase tracking-[0.16em] opacity-50">Lot</dt>
-        <dd class="text-right">{{ product().slug }}</dd>
-      </div> -->
-    </dl>
-
-    <button
-      type="button"
-      [attr.aria-label]="'View ' + product().name"
-      class="border-saffron-300/40 text-saffron-300 hover:bg-saffron-300 hover:text-terra-950 group/btn mt-auto flex items-center justify-between gap-2 border px-4 py-3 text-[10px] tracking-[0.22em] uppercase transition-colors duration-200"
+  <!-- goto product button -->
+  <button
+    type="button"
+    class="shadow-chili-100 absolute inset-0 flex cursor-pointer items-center justify-center border-0 bg-transparent opacity-0 shadow-2xl transition-opacity duration-300 group-hover:opacity-100"
+    [attr.aria-label]="'View ' + product().name"
+  >
+    <span
+      class="flex h-14 w-14 items-center justify-center rounded-full bg-[#f7fbf2] shadow-[0_4px_24px_rgba(0,0,0,0.45)]"
     >
-      <span>View Product</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -61,7 +42,7 @@
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1"
+        class="h-6 w-6 text-[#1c1f0f]"
       >
         <line
           x1="5"
@@ -71,6 +52,34 @@
         />
         <polyline points="12 5 19 12 12 19" />
       </svg>
-    </button>
+    </span>
+  </button>
+
+  <!-- category tag -->
+  <span
+    class="font-geist-mono absolute top-8 right-8 bg-[rgba(247,251,242,0.92)] px-2.5 py-1.5 text-[10px] tracking-[0.2em] text-[#1c1f0f] uppercase backdrop-blur-xs"
+  >
+    {{ product().category.name }}
+  </span>
+
+  <!-- text block -->
+  <div class="absolute right-6 bottom-5.5 left-6 flex flex-col gap-1.5">
+    <div class="flex flex-col">
+      <h3
+        class="font-instrument m-0 line-clamp-1 max-h-[1.5em] overflow-hidden text-4xl leading-none tracking-[-0.015em] transition-[max-height] duration-500 ease-in-out [text-shadow:0_1px_24px_rgba(0,0,0,0.35)] group-hover:line-clamp-none group-hover:max-h-40"
+      >
+        {{ product().name.replace('HSI ', '') }}
+      </h3>
+      <p class="font-geist m-0 max-w-75 text-[13px] leading-normal text-pretty uppercase opacity-[0.82]">
+        {{ product().generic_name }}
+      </p>
+    </div>
+    <p
+      class="font-geist m-0 max-h-40 max-w-75 overflow-hidden text-[13px] leading-normal opacity-[0.82] transition-[max-height] duration-500 ease-in-out md:line-clamp-1 md:max-h-[1.5em] md:group-hover:line-clamp-none md:group-hover:max-h-40"
+    >
+      {{ product().short_description ?? product().description }}
+    </p>
   </div>
 </article>
+
+<!-- @if (product().generic_name) {<em class="opacity-90"> {{ product().generic_name }}</em>} -->
