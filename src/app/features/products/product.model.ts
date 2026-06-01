@@ -5,10 +5,10 @@ export interface IProduct {
   generic_name?: string;
   description: string;
   short_description?: string;
-  category: Category;
+  category: ICategory;
 }
 
-export interface Category {
+export interface ICategory {
   id: string;
   name: string;
   slug: string;

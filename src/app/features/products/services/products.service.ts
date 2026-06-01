@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpService } from '../../../core/services/http.service';
-import { IProduct } from '../product.model';
+import { ICategory, IProduct } from '../product.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -12,5 +12,10 @@ export class ProductsService {
   getAllProducts(): Observable<IProduct[]> {
     const target = `/products`;
     return this.httpService.get<IProduct[]>(target);
+  }
+
+  getCategories(): Observable<ICategory[]> {
+    const target = `/categories`;
+    return this.httpService.get<ICategory[]>(target);
   }
 }

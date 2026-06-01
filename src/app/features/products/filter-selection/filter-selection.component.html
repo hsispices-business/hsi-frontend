@@ -6,36 +6,25 @@
       <div>
         <h3 class="font-instrument mb-6 text-[24px] leading-[0.95] tracking-[-0.01em]">Categories</h3>
         <ul class="space-y-4">
-          <li>
-            <button class="text-chili-600 group flex items-center gap-2 text-[14px] font-semibold transition-colors">
-              <span class="bg-chili-600 h-1.5 w-1.5"></span>
-              All Range
-            </button>
-          </li>
-          <li>
-            <button
-              class="hover:text-chili-600 group flex items-center gap-2 text-[14px] text-[rgba(26,23,20,0.6)] transition-colors"
-            >
-              <span class="group-hover:bg-chili-600 h-1.5 w-1.5 bg-transparent transition-colors"></span>
-              Whole Spices
-            </button>
-          </li>
-          <li>
-            <button
-              class="hover:text-chili-600 group flex items-center gap-2 text-[14px] text-[rgba(26,23,20,0.6)] transition-colors"
-            >
-              <span class="group-hover:bg-chili-600 h-1.5 w-1.5 bg-transparent transition-colors"></span>
-              Ground Powders
-            </button>
-          </li>
-          <li>
-            <button
-              class="hover:text-chili-600 group flex items-center gap-2 text-[14px] text-[rgba(26,23,20,0.6)] transition-colors"
-            >
-              <span class="group-hover:bg-chili-600 h-1.5 w-1.5 bg-transparent transition-colors"></span>
-              Blended Mixes
-            </button>
-          </li>
+          @for (category of displayCategories(); track category.id) {
+            <li>
+              <button
+                (click)="selectCategory(category)"
+                class="group flex items-center gap-2 text-[14px] transition-colors"
+                [class.text-chili-600]="isSelected(category)"
+                [class.text-[rgba(26,23,20,0.6)]]="!isSelected(category)"
+                [class.hover:text-chili-600]="!isSelected(category)"
+              >
+                <span
+                  class="h-1.5 w-1.5 transition-colors"
+                  [class.bg-chili-600]="isSelected(category)"
+                  [class.bg-transparent]="!isSelected(category)"
+                  [class.group-hover:bg-chili-600]="!isSelected(category)"
+                ></span>
+                {{ category.name }}
+              </button>
+            </li>
+          }
         </ul>
       </div>
     </div>

@@ -46,7 +46,10 @@
     </div>
   </section>
   <section class="relative grid grid-cols-1 md:grid-cols-[30%_1fr] md:p-4 lg:grid-cols-[20%_1fr]">
-    <app-filter-selection />
-    <app-product-list [productList]="duplicateProducts()" />
+    <app-filter-selection
+      [categories]="categories()"
+      (categorySelected)="onCategorySelected($event)"
+    />
+    <app-product-list [productList]="filteredProducts()" />
   </section>
 </div>
