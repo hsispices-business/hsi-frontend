@@ -1,5 +1,6 @@
-import { Component, HostListener, ElementRef } from '@angular/core';
+import { Component, HostListener, ElementRef, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { GetQuoteService } from '../../../features/get-quote/get-quote-modal.service';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +9,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
+  readonly quoteService = inject(GetQuoteService);
+  readonly elRef = inject(ElementRef);
   mobileMenuOpen = false;
-
-  constructor(private elRef: ElementRef) {}
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent): void {
@@ -19,7 +20,7 @@ export class HeaderComponent {
     }
   }
 
-  selectedTab: string = 'products';
+  selectedTab = 'products';
 
   toggleTab(tab: string) {
     this.selectedTab = tab;

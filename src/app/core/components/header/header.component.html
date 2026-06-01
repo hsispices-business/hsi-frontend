@@ -12,7 +12,6 @@
         >
           <span class="absolute -inset-0.5"></span>
           <span class="sr-only">Open main menu</span>
-          <!-- Hamburger icon -->
           <svg
             [class.hidden]="mobileMenuOpen"
             viewBox="0 0 24 24"
@@ -28,7 +27,6 @@
               stroke-linejoin="round"
             />
           </svg>
-          <!-- Close icon -->
           <svg
             [class.hidden]="!mobileMenuOpen"
             viewBox="0 0 24 24"
@@ -53,7 +51,7 @@
         <div class="flex shrink-0 items-center">
           <img
             class="h-8 w-auto cursor-pointer"
-            routerLink="/dev/testing/home"
+            routerLink="/"
             src="brand_logo.png"
             alt="Him Spices Industries"
           />
@@ -62,52 +60,57 @@
         <!-- Desktop Nav Links -->
         <div class="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-1">
           <a
-            routerLink="dev/testing/home"
+            routerLink="/dev/testing/home"
             routerLinkActive="underline decoration-2 underline-offset-2 sm:underline-offset-8"
             [routerLinkActiveOptions]="{ exact: true }"
-            aria-current="page"
             class="text-chili-500 rounded-md px-3 py-2 text-sm font-bold hover:underline hover:decoration-2 hover:underline-offset-2 sm:hover:underline-offset-8"
           >
             Home
           </a>
           <a
-            routerLink="dev/testing/products"
+            routerLink="/dev/testing/products"
             routerLinkActive="underline decoration-2 underline-offset-2 sm:underline-offset-8"
             [routerLinkActiveOptions]="{ exact: true }"
-            aria-current="page"
             class="text-chili-500 rounded-md px-3 py-2 text-sm font-bold hover:underline hover:decoration-2 hover:underline-offset-2 sm:hover:underline-offset-8"
           >
             Products
           </a>
           <a
-            href="#"
+            routerLink="/heritage"
+            routerLinkActive="underline decoration-2 underline-offset-2 sm:underline-offset-8"
+            [routerLinkActiveOptions]="{ exact: true }"
             class="text-chili-500 rounded-md px-3 py-2 text-sm font-bold hover:underline hover:decoration-2 hover:underline-offset-2 sm:hover:underline-offset-8"
           >
             Heritage
           </a>
           <a
-            href="#"
+            routerLink="/blog"
+            routerLinkActive="underline decoration-2 underline-offset-2 sm:underline-offset-8"
+            [routerLinkActiveOptions]="{ exact: true }"
             class="text-chili-500 rounded-md px-3 py-2 text-sm font-bold hover:underline hover:decoration-2 hover:underline-offset-2 sm:hover:underline-offset-8"
           >
             Blog
           </a>
           <a
-            href="#"
+            routerLink="/faq"
+            routerLinkActive="underline decoration-2 underline-offset-2 sm:underline-offset-8"
+            [routerLinkActiveOptions]="{ exact: true }"
             class="text-chili-500 rounded-md px-3 py-2 text-sm font-bold hover:underline hover:decoration-2 hover:underline-offset-2 sm:hover:underline-offset-8"
           >
-            About Us
+            FAQ
           </a>
           <a
             href="#"
             class="text-chili-500 rounded-md px-3 py-2 text-sm font-bold hover:underline hover:decoration-2 hover:underline-offset-2 sm:hover:underline-offset-8"
           >
-            Contact Us
+            Contact
           </a>
         </div>
 
         <!-- CTA Button -->
         <div class="absolute inset-y-0 right-0 flex items-center sm:static sm:inset-auto">
           <button
+            (click)="quoteService.open()"
             class="bg-chili-500 hover:bg-chili-600 rounded-md px-4 py-2 text-sm font-bold text-white transition-colors"
           >
             Get Quote
@@ -130,37 +133,42 @@
   >
     <div class="space-y-1 px-4 py-3">
       <a
-        routerLink="dev/testing/products"
+        routerLink="/dev/testing/products"
         routerLinkActive="underline decoration-2 underline-offset-2"
         [routerLinkActiveOptions]="{ exact: true }"
-        aria-current="page"
         class="text-chili-500 block rounded-md px-3 py-2 text-sm font-bold"
       >
         Products
       </a>
       <a
-        href="#"
+        routerLink="/heritage"
+        routerLinkActive="underline decoration-2 underline-offset-2"
+        [routerLinkActiveOptions]="{ exact: true }"
         class="text-chili-500 block rounded-md px-3 py-2 text-sm font-bold"
       >
         Heritage
       </a>
       <a
-        href="#"
+        routerLink="/blog"
+        routerLinkActive="underline decoration-2 underline-offset-2"
+        [routerLinkActiveOptions]="{ exact: true }"
         class="text-chili-500 block rounded-md px-3 py-2 text-sm font-bold"
       >
         Blog
       </a>
       <a
-        href="#"
+        routerLink="/faq"
+        routerLinkActive="underline decoration-2 underline-offset-2"
+        [routerLinkActiveOptions]="{ exact: true }"
         class="text-chili-500 block rounded-md px-3 py-2 text-sm font-bold"
       >
-        About Us
+        FAQ
       </a>
       <a
         href="#"
         class="text-chili-500 block rounded-md px-3 py-2 text-sm font-bold"
       >
-        Contact Us
+        Contact
       </a>
     </div>
   </div>

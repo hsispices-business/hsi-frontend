@@ -1,0 +1,196 @@
+@if (quoteService.isOpen()) {
+  <div
+    class="fixed inset-0 z-[100] flex items-center justify-center bg-[#3a261a]/20 p-4 backdrop-blur-sm md:p-6"
+    role="button"
+    tabindex="0"
+    (click)="quoteService.close()"
+    (keydown.enter)="quoteService.close()"
+    (keydown.escape)="quoteService.close()"
+  >
+    <div
+      class="relative w-full max-w-3xl overflow-hidden border border-[#ddc0bd]/10 bg-white shadow-2xl"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="quote-dialog-title"
+      (click)="$event.stopPropagation()"
+      (keydown)="$event.stopPropagation()"
+    >
+      <!-- Close Button -->
+      <button
+        type="button"
+        (click)="quoteService.close()"
+        class="absolute top-6 right-6 z-10 text-[#574240] transition-colors hover:text-[#5c040a]"
+      >
+        <span class="material-symbols-outlined text-3xl">close</span>
+      </button>
+
+      <div class="grid min-h-[600px] md:grid-cols-[1fr_2fr]">
+        <!-- Left Sidebar -->
+        <div class="relative hidden flex-col justify-between overflow-hidden bg-[#7b1d1d] p-10 text-white md:flex">
+          <div class="relative z-10">
+            <span class="mb-4 block text-xs font-medium tracking-[0.3em] uppercase opacity-80">Established 1998</span>
+            <h2 class="mb-6 font-serif text-4xl leading-tight font-bold">Him Spices Industries</h2>
+            <p class="font-sans text-sm leading-relaxed opacity-90">
+              Secure our wholesale heritage pricing for your business. From organic turmeric to premium saffron, we
+              bring the heart of Indian spices to your doorstep.
+            </p>
+          </div>
+          <div class="relative z-10">
+            <div class="mb-4 flex items-center gap-3">
+              <span class="material-symbols-outlined text-[#ffdad7]">verified_user</span>
+              <span class="text-xs font-medium tracking-wide">Quality Assured Logistics</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-[#ffdad7]">public</span>
+              <span class="text-xs font-medium tracking-wide">Global Shipping Hub</span>
+            </div>
+          </div>
+          <div class="spice-dot-overlay pointer-events-none absolute inset-0 opacity-10"></div>
+          <div class="absolute -bottom-10 -left-10 h-48 w-48 rounded-full bg-[#5c040a] opacity-50 blur-3xl"></div>
+        </div>
+
+        <!-- Form Panel -->
+        <div class="max-h-[90vh] overflow-y-auto p-8 md:p-12">
+          <div class="mb-10">
+            <h1
+              id="quote-dialog-title"
+              class="mb-2 font-serif text-3xl font-bold text-[#3a261a]"
+            >
+              Request a Quote
+            </h1>
+            <p class="text-sm text-[#574240] italic">Tailored spice solutions for culinary professionals.</p>
+          </div>
+
+          <form
+            (submit)="onSubmit($event)"
+            class="space-y-8"
+          >
+            <!-- Name + Email -->
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div>
+                <label
+                  for="fullName"
+                  class="mb-1 block text-[10px] font-bold tracking-widest text-[#3a261a] uppercase"
+                >
+                  Full Name
+                </label>
+                <input
+                  id="fullName"
+                  type="text"
+                  name="fullName"
+                  [(ngModel)]="fullName"
+                  placeholder="John Doe"
+                  class="w-full border-0 border-b border-[#ddc0bd] bg-transparent px-0 py-2 text-[#1d1c17] transition-all outline-none placeholder:text-[#ddc0bd] focus:border-[#5c040a] focus:ring-0"
+                />
+              </div>
+              <div>
+                <label
+                  for="email"
+                  class="mb-1 block text-[10px] font-bold tracking-widest text-[#3a261a] uppercase"
+                >
+                  Business Email
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  [(ngModel)]="email"
+                  placeholder="procurement@hotel.com"
+                  class="w-full border-0 border-b border-[#ddc0bd] bg-transparent px-0 py-2 text-[#1d1c17] transition-all outline-none placeholder:text-[#ddc0bd] focus:border-[#5c040a] focus:ring-0"
+                />
+              </div>
+            </div>
+
+            <!-- Phone + Quantity -->
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div>
+                <label
+                  for="phone"
+                  class="mb-1 block text-[10px] font-bold tracking-widest text-[#3a261a] uppercase"
+                >
+                  Phone Number
+                </label>
+                <input
+                  id="phone"
+                  type="tel"
+                  name="phone"
+                  [(ngModel)]="phone"
+                  placeholder="+91 000 000 0000"
+                  class="w-full border-0 border-b border-[#ddc0bd] bg-transparent px-0 py-2 text-[#1d1c17] transition-all outline-none placeholder:text-[#ddc0bd] focus:border-[#5c040a] focus:ring-0"
+                />
+              </div>
+              <div>
+                <label
+                  for="quantity"
+                  class="mb-1 block text-[10px] font-bold tracking-widest text-[#3a261a] uppercase"
+                >
+                  Approx. Quantity (kg)
+                </label>
+                <input
+                  id="quantity"
+                  type="number"
+                  name="quantity"
+                  [(ngModel)]="quantity"
+                  placeholder="e.g. 50"
+                  class="w-full border-0 border-b border-[#ddc0bd] bg-transparent px-0 py-2 text-[#1d1c17] transition-all outline-none placeholder:text-[#ddc0bd] focus:border-[#5c040a] focus:ring-0"
+                />
+              </div>
+            </div>
+
+            <!-- Spice Selector -->
+            <div>
+              <p class="mb-4 block text-[10px] font-bold tracking-widest text-[#3a261a] uppercase">
+                Select Spices of Interest
+              </p>
+              <div class="grid grid-cols-2 gap-x-4 gap-y-3">
+                @for (spice of spiceOptions; track spice) {
+                  <label class="group flex cursor-pointer items-center space-x-3">
+                    <input
+                      type="checkbox"
+                      class="h-4 w-4 cursor-pointer rounded-none border-[#ddc0bd] text-[#5c040a] focus:ring-0"
+                      [checked]="isSpiceSelected(spice)"
+                      (change)="toggleSpice(spice)"
+                    />
+                    <span class="text-sm text-[#1d1c17] transition-colors group-hover:text-[#5c040a]">{{ spice }}</span>
+                  </label>
+                }
+              </div>
+            </div>
+
+            <!-- Requirements -->
+            <div>
+              <label
+                for="requirements"
+                class="mb-1 block text-[10px] font-bold tracking-widest text-[#3a261a] uppercase"
+              >
+                Specific Requirements
+              </label>
+              <textarea
+                id="requirements"
+                name="requirements"
+                [(ngModel)]="requirements"
+                rows="3"
+                placeholder="Tell us about your packaging or organic certification needs..."
+                class="w-full resize-none border-0 border-b border-[#ddc0bd] bg-[#f8f3eb] px-4 py-3 text-sm text-[#1d1c17] transition-all outline-none placeholder:text-[#574240]/70 focus:border-[#5c040a] focus:ring-0"
+              ></textarea>
+            </div>
+
+            <!-- Submit -->
+            <div class="pt-4">
+              <button
+                type="submit"
+                class="flex w-full items-center justify-center gap-2 bg-[#5c040a] py-4 font-sans font-semibold tracking-[0.2em] text-white uppercase transition-all hover:bg-[#7b1d1d] active:scale-[0.98]"
+              >
+                Submit Inquiry
+                <span class="material-symbols-outlined text-lg">arrow_forward</span>
+              </button>
+              <p class="mt-4 text-center text-[10px] text-[#574240] opacity-60">
+                Our sales team typically responds within 4 business hours.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+}
