@@ -1,0 +1,95 @@
+<!-- Hero Header -->
+<header class="mx-auto max-w-7xl px-8 pt-12 pb-20">
+  <div class="flex flex-col items-end gap-8 md:flex-row">
+    <div class="md:w-2/3">
+      <span class="mb-4 block text-xs font-medium tracking-widest text-[#7e570b] uppercase">Knowledge Base</span>
+      <h1 class="mb-6 font-serif text-5xl font-bold tracking-tight text-[#3a261a] md:text-7xl">
+        Frequently Asked
+        <br />
+        <span class="font-normal text-[#5c040a] italic">Questions</span>
+      </h1>
+      <p class="max-w-xl text-lg leading-relaxed text-[#574240]">
+        Everything you need to know about our legacy of quality, bulk logistics, and global spice distribution
+        standards.
+      </p>
+    </div>
+    <div class="flex justify-end md:w-1/3">
+      <div class="aspect-[4/5] w-full overflow-hidden rounded-lg bg-[#f2ede5] shadow-xl shadow-black/5">
+        <img
+          class="h-full w-full object-cover grayscale-[20%] transition-all duration-700 hover:grayscale-0"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzSk-4gd9Otkzjuttxa1lrXO_Aalt1N5WDJXFT4xs18aZw_UCj571MfgxW2A4xXSpzkUxZpk6bBOeuisEEuNH_NlaqLeJRXhGKsUWiW3wcUa76zytn1zP0J53UBTvpSedk0DG3yYZyj9iBx73m7eZkdzB0yx4ZO1BhloM6wtMcF5_t-zKWucnUB9XeQtGcbmN2tb4vuxWeDkS1hANoq0w8cy04WrYFNvhFSiD_RNCmRucZ4aRLOJ5jTdbUPCdbwYuGr0BuHP2eQ13D"
+          alt="Close-up of vibrant red chili powder and whole spices in a rustic bowl"
+        />
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- FAQ Accordion Sections -->
+<main class="spice-dot-overlay bg-[#f8f3eb] px-8 py-24">
+  <div class="mx-auto max-w-4xl">
+    @for (section of sections; track section.id) {
+      <section class="mb-20">
+        <div class="mb-10 flex items-center gap-4">
+          <span
+            class="material-symbols-outlined text-[#5c040a]"
+            style="font-size: 1.75rem"
+          >
+            {{ section.icon }}
+          </span>
+          <h2 class="font-serif text-3xl font-bold text-[#3a261a]">{{ section.title }}</h2>
+        </div>
+        <div class="space-y-6">
+          @for (item of section.items; track item.id) {
+            <div
+              class="rounded-lg border-l-4 bg-white p-6 shadow-sm transition-all duration-300"
+              [style.borderLeftColor]="section.accentHex"
+              [class.shadow-md]="isOpen(item.id)"
+            >
+              <button
+                type="button"
+                class="flex w-full cursor-pointer items-center justify-between text-left"
+                (click)="toggle(item.id)"
+              >
+                <span class="pr-4 font-serif text-xl font-semibold text-[#1d1c17]">{{ item.question }}</span>
+                <span
+                  class="material-symbols-outlined flex-shrink-0 text-[#574240] transition-transform duration-300"
+                  [class.rotate-180]="isOpen(item.id)"
+                >
+                  expand_more
+                </span>
+              </button>
+              @if (isOpen(item.id)) {
+                <div class="mt-4 border-t border-[#ddc0bd]/20 pt-4 font-sans leading-relaxed text-[#574240]">
+                  {{ item.answer }}
+                </div>
+              }
+            </div>
+          }
+        </div>
+      </section>
+    }
+  </div>
+</main>
+
+<!-- CTA Section -->
+<section class="border-t border-[#f2ede5] bg-[#fef9f1] px-8 py-24 text-center">
+  <h3 class="mb-6 font-serif text-4xl font-bold text-[#3a261a]">Still have questions?</h3>
+  <p class="mx-auto mb-10 max-w-lg text-[#574240]">
+    Our heritage specialists are available for detailed consultations regarding spice sourcing, blending, and
+    distribution.
+  </p>
+  <div class="flex flex-col justify-center gap-4 md:flex-row">
+    <button
+      (click)="quoteService.open()"
+      class="bg-[#5c040a] px-10 py-4 font-serif font-bold tracking-wide text-white transition-all hover:opacity-90 active:scale-95"
+    >
+      Get a Quote
+    </button>
+    <button
+      class="border border-[#8a716f] px-10 py-4 font-serif font-bold tracking-wide text-[#3a261a] transition-all hover:bg-[#f8f3eb] active:scale-95"
+    >
+      Download Brochure
+    </button>
+  </div>
+</section>
