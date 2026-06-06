@@ -7,13 +7,20 @@ export const routes: Routes = [
       import('./features/coming-soon/coming-soon.component').then((m) => m.ComingSoonComponent),
   },
   {
-    path: 'dev/testing/home',
+    path: 'home',
     loadComponent: () => import('./features/home/home.component').then((m) => m.HomeComponent),
   },
   {
-    path: 'dev/testing/products',
+    path: 'products',
     loadComponent: () =>
       import('./features/products/products.component').then((m) => m.ProductsComponent),
+  },
+  {
+    path: 'product-detail',
+    loadComponent: () =>
+      import('./features/products/product-detail/product-detail.component').then(
+        (m) => m.ProductDetailComponent,
+      ),
   },
   {
     path: 'blog',
