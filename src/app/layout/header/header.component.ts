@@ -1,6 +1,6 @@
 import { Component, HostListener, ElementRef, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { GetQuoteService } from '../../../features/get-quote/get-quote-modal.service';
+import { GetQuoteService } from '../../features/get-quote/get-quote-modal.service';
 
 @Component({
   selector: 'app-header',
