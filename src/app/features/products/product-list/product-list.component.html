@@ -1,41 +1,44 @@
 <section class="relative px-4 py-4 md:pl-6">
   <div class="font-geist-mono flex w-full pt-1 pb-6 text-[1rem] leading-[0.95] font-normal tracking-[-0.01em]">
-    Showing {{ productList().length }} products
+    Showing {{ visibleProducts().length }} of {{ productList().length }} products
   </div>
-  <div class="scrollbar-hidden relative h-screen snap-y snap-mandatory overflow-y-scroll">
-    <div class="grid auto-rows-max gap-8 py-3 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-      @for (product of productList(); track $index) {
-        <div class="snap-start">
+  <div>
+    <div class="grid auto-rows-max gap-8 py-3 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3">
+      @for (product of visibleProducts(); track product.id) {
+        <div>
           <app-product-card [product]="product" />
         </div>
       }
     </div>
-    <div class="my-5 flex w-full items-center justify-center">
-      <button
-        type="button"
-        [attr.aria-label]="'Load More'"
-        class="border-terra-500/40 hover:bg-saffron-300 hover:text-terra-950 group/btn mt-auto flex cursor-pointer items-center justify-between gap-2 border px-12 py-3 text-[14px] tracking-[0.22em] text-black uppercase shadow-xl transition-colors duration-200"
-      >
-        <span>Load More</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1"
+    @if (hasMore()) {
+      <div class="my-5 flex w-full items-center justify-center">
+        <button
+          type="button"
+          (click)="loadMore()"
+          [attr.aria-label]="'Load More'"
+          class="border-terra-500/40 hover:bg-saffron-300 hover:text-terra-950 group/btn mt-auto flex cursor-pointer items-center justify-between gap-2 border px-12 py-3 text-[14px] tracking-[0.22em] text-black uppercase shadow-xl transition-colors duration-200"
         >
-          <line
-            x1="5"
-            y1="12"
-            x2="19"
-            y2="12"
-          />
-          <polyline points="12 5 19 12 12 19" />
-        </svg>
-      </button>
-    </div>
+          <span>Load More</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1"
+          >
+            <line
+              x1="5"
+              y1="12"
+              x2="19"
+              y2="12"
+            />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </button>
+      </div>
+    }
   </div>
 </section>

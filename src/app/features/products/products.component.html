@@ -1,55 +1,57 @@
 <div class="relative grid min-h-screen grid-rows-[auto_1fr] gap-1">
-  <section
-    class="border-chili-500 relative flex flex-col items-center justify-between border-b p-8 shadow-xl md:flex-row"
-  >
-    <!-- Left Content -->
-    <div class="flex flex-1 flex-col gap-4">
-      <p class="text-sm font-semibold tracking-wider text-amber-900 uppercase">The Spice Range</p>
-      <h1 class="font-serif text-5xl leading-tight">
-        Heritage in
-        <span class="text-red-900 italic">
-          Every
-          <br />
-          Grain.
-        </span>
-      </h1>
-      <p class="mt-2 max-w-md text-gray-700">
-        Explore our curated selection of premium spices, sourced directly from the finest plantations and processed with
-        26 years of ancestral expertise.
-      </p>
-    </div>
+  <section class="border-chili-500 relative border-b shadow-xl">
+    <div class="mx-auto flex w-full max-w-7xl flex-col items-center justify-between p-8 md:flex-row">
+      <!-- Left Content -->
+      <div class="flex flex-1 flex-col gap-4">
+        <p class="text-sm font-semibold tracking-wider text-amber-900 uppercase">The Spice Range</p>
+        <h1 class="font-serif text-5xl leading-tight">
+          Heritage in
+          <span class="text-red-900 italic">
+            Every
+            <br />
+            Grain.
+          </span>
+        </h1>
+        <p class="mt-2 max-w-md text-gray-700">
+          Explore our curated selection of premium spices, sourced directly from the finest plantations and processed
+          with 26 years of ancestral expertise.
+        </p>
+      </div>
 
-    <!-- Right Search -->
-    <div class="w-80 shrink-0">
-      <div class="relative">
-        <input
-          type="text"
-          placeholder="Search our collection..."
-          class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-transparent focus:ring-2 focus:ring-red-900 focus:outline-none"
-        />
-        <button class="absolute top-1/2 right-3 -translate-y-1/2 transform text-gray-400 hover:text-gray-600">
-          <svg
-            class="h-5 w-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            ></path>
-          </svg>
-        </button>
+      <!-- Right Search -->
+      <div class="w-80 shrink-0">
+        <div class="relative">
+          <input
+            type="text"
+            placeholder="Search our collection..."
+            class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-transparent focus:ring-2 focus:ring-red-900 focus:outline-none"
+          />
+          <button class="absolute top-1/2 right-3 -translate-y-1/2 transform text-gray-400 hover:text-gray-600">
+            <svg
+              class="h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              ></path>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </section>
-  <section class="relative grid grid-cols-1 md:grid-cols-[30%_1fr] md:p-4 lg:grid-cols-[20%_1fr]">
-    <app-filter-selection
-      [categories]="categories()"
-      (categorySelected)="onCategorySelected($event)"
-    />
-    <app-product-list [productList]="filteredProducts()" />
+  <section class="relative">
+    <div class="mx-auto grid w-full max-w-7xl grid-cols-1 md:grid-cols-[30%_1fr] md:p-4 lg:grid-cols-[20%_1fr]">
+      <app-filter-selection
+        [categories]="categories()"
+        (categorySelected)="onCategorySelected($event)"
+      />
+      <app-product-list [productList]="filteredProducts()" />
+    </div>
   </section>
 </div>

@@ -1,5 +1,5 @@
 <section
-  class="border-chili-500 font-geist-mono relative flex min-h-full flex-col border-b p-8 tracking-wider shadow-xl md:border-r md:border-b-0"
+  class="border-chili-500 font-geist-mono relative flex min-h-full flex-col border-b p-8 tracking-wider md:border-r md:border-b-0"
 >
   <aside class="w-full shrink-0 md:w-48">
     <div class="sticky top-32 space-y-8">
@@ -10,7 +10,7 @@
             <li>
               <button
                 (click)="selectCategory(category)"
-                class="group flex items-center gap-2 text-[14px] transition-colors"
+                class="group flex cursor-pointer items-center gap-2 text-[14px] transition-colors"
                 [class.text-chili-600]="isSelected(category)"
                 [class.text-[rgba(26,23,20,0.6)]]="!isSelected(category)"
                 [class.hover:text-chili-600]="!isSelected(category)"

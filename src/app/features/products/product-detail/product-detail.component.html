@@ -1,1 +1,87 @@
-<p>product-detail works!</p>
+@if (product(); as p) {
+  <div class="mx-auto max-w-7xl px-6 py-10">
+    <!-- Back -->
+    <a
+      routerLink="/products"
+      class="text-chili-500 mb-8 inline-flex items-center gap-2 text-sm font-semibold tracking-widest uppercase hover:underline"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="h-4 w-4"
+      >
+        <line
+          x1="19"
+          y1="12"
+          x2="5"
+          y2="12"
+        />
+        <polyline points="12 19 5 12 12 5" />
+      </svg>
+      All Products
+    </a>
+
+    <!-- Main grid -->
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
+      <!-- Image -->
+      <div class="bg-chili-100 relative aspect-[4/5] overflow-hidden">
+        <img
+          src="haldi_image.png"
+          [alt]="p.name"
+          class="h-full w-full object-cover"
+        />
+        <span
+          class="font-geist-mono absolute top-6 right-6 bg-white/90 px-3 py-1.5 text-[10px] tracking-[0.2em] text-[#1c1f0f] uppercase backdrop-blur-sm"
+        >
+          {{ p.category.name }}
+        </span>
+      </div>
+
+      <!-- Info -->
+      <div class="flex flex-col justify-center gap-6">
+        <div>
+          <p class="font-geist-mono text-muted mb-1 text-xs tracking-[0.2em] uppercase">{{ p.generic_name }}</p>
+          <h1 class="font-instrument text-5xl leading-tight tracking-tight text-[#1c1f0f]">
+            {{ p.name.replace('HSI ', '') }}
+          </h1>
+        </div>
+
+        <p class="text-muted max-w-prose text-base leading-relaxed">{{ p.description }}</p>
+
+        <div class="border-border border-t pt-6">
+          <dl class="grid grid-cols-2 gap-4 text-sm">
+            <div>
+              <dt class="text-muted font-geist-mono mb-1 text-[10px] tracking-[0.15em] uppercase">Category</dt>
+              <dd class="font-semibold text-[#1c1f0f]">{{ p.category.name }}</dd>
+            </div>
+            <div>
+              <dt class="text-muted font-geist-mono mb-1 text-[10px] tracking-[0.15em] uppercase">Product Code</dt>
+              <dd class="font-semibold text-[#1c1f0f] uppercase">{{ p.slug }}</dd>
+            </div>
+          </dl>
+        </div>
+
+        <button
+          class="bg-chili-500 hover:bg-chili-600 mt-2 w-fit px-10 py-4 font-serif font-bold tracking-wide text-white transition-all active:scale-95"
+        >
+          Request a Quote
+        </button>
+      </div>
+    </div>
+
+    <!-- Category description -->
+    <section class="border-border mt-16 border-t pt-12">
+      <h2 class="mb-4 font-serif text-2xl font-bold text-[#3a261a]">About {{ p.category.name }}</h2>
+      <p class="text-muted max-w-2xl leading-relaxed">{{ p.category.description }}</p>
+    </section>
+  </div>
+} @else {
+  <div class="flex min-h-[60vh] items-center justify-center">
+    <span class="text-muted text-sm">Loading product…</span>
+  </div>
+}
